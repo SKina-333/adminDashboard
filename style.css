@@ -8,6 +8,7 @@
     --bodoni: "Bodoni Moda", serif;
 
     --box-shadow: 0 0 8px 0px #00000067;
+    --box-shadow-card: 0 0 8px 0px #4444443d;
     --hover: rgba(235, 235, 235, 0.50);
     --clicked: #dae3ff;
     --icon-color: brightness(0) saturate(100%) invert(22%) sepia(96%) saturate(2009%) hue-rotate(213deg) brightness(99%) contrast(96%);
@@ -146,7 +147,7 @@ body {
 
 .topnav .navigation {
     display: grid;
-    grid-template-columns:  minmax(400px, 40%) 1fr;
+    grid-template-columns:  3fr 1fr;
     grid-template-rows: 1fr;
     background-color: var(--box-color);
     border-radius: 20px;
@@ -195,11 +196,128 @@ body {
     background-color: #fcfcfc;
 }
 
+.action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.current-user {
+    font-weight: 700;
+}
+
+.messages .username {
+    font-size: 25px;
+}
+
+.current-user .profile-img {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.current-user {
+    display: flex;
+    align-items: center;
+}
+
+.actions {
+    justify-self: end;
+}
+
+.actions button {
+    font-family: var(--lexend-deca);
+    color: white;
+    background-color:   rgb(41, 83, 221);
+    border-radius: 30px;
+    padding: 16px 32px;
+}
+
 .content {
     grid-column: 2/6;
     grid-row: 2/6;
-
-    background-color: aquamarine;
-
     margin: 10px;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.content .my-projects {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card-contents {
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: 250px;
+
+    gap: 15px;
+}
+
+.my-projects .card {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: var(--box-shadow-card);
+    border-radius: 20px;
+}
+
+.side-info {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.side-info .announcements , .side-info .trendings{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px;
+    gap: 15px;
+}
+
+.announcements .card, .trendings .card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-card);
+}
+
+p.title {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: var(--lora);
+    font-weight: 700;
+
+    color: #3974e2;
+}
+
+.card {
+    padding: 15px;
+}
+
+.my-projects .card-title {
+    font-family: var(--lexend-deca);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.my-projects .card-desc {
+    font-family: var(--quicksand);
+    font-size: 18px;
+
+    margin-top: 10px;
+}
+
+.trendings .card {
+    display: flex;
+    align-items: center;
+}
+
+.trendings img {
+    width: 70px;
+    height: 70px;
 }
